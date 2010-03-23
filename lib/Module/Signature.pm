@@ -1,5 +1,5 @@
 package Module::Signature;
-$Module::Signature::VERSION = '0.61';
+$Module::Signature::VERSION = '0.62';
 
 use 5.005;
 use strict;
@@ -565,7 +565,7 @@ Module::Signature - Module signature file manipulation
 
 =head1 VERSION
 
-This document describes version 0.61 of B<Module::Signature>,
+This document describes version 0.62 of B<Module::Signature>,
 released November 18, 2009.
 
 =head1 SYNOPSIS
