@@ -86,7 +86,6 @@ unless ( can_run('diff') ) {
 	}
 }
 
-auto_install;
 sign; WriteAll;
 
 
