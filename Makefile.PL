@@ -102,8 +102,7 @@ sub locate_gpg {
 	my $gpg = can_run('gpg');
 	my $has_gpg = (
 		$gpg and
-		`gpg --version` =~ /GnuPG/ and
-		defined `gpg --list-public-keys`
+		`gpg --version` =~ /GnuPG/
 	);
 
 	unless ( $has_gpg ) {

@@ -1,3 +1,6 @@
+* Avoid creating gnupg configuration files for the user invoking Makefile.PL
+  (Closes RT#41978).
+
 [Changes for 0.63 - Sun, 28 Mar 2010 04:46:27 +0100]
 
 * Fix diagnostic message from Makefile.PL when the user dosn't have gnupg or
