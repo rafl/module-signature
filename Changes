@@ -1,3 +1,8 @@
+* Remove tests for gnupg detection on cygwin.
+  Turns out the default detection mechanism already picked it up
+  correctly when installed via cygwin's setup, and the test checked
+  for a location that's only sometimes used by mingw versions of gpg.
+
 [Changes for 0.64 - Sun,  9 May 2010 00:50:11 +0200]
 
 * Avoid creating gnupg configuration files for the user invoking Makefile.PL
