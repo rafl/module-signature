@@ -177,8 +177,8 @@ sub _fullcheck {
 }
 
 sub _legacy_extutils {
-    # ExtUtils::Manifest older than 1.41 does not handle default skips well.
-    return (ExtUtils::Manifest->VERSION < 1.41);
+    # ExtUtils::Manifest older than 1.58 does not handle MYMETA.
+    return (ExtUtils::Manifest->VERSION < 1.58);
 }
 
 sub _default_skip {
@@ -187,6 +187,7 @@ sub _default_skip {
              or /^MANIFEST\.bak/ or /^Makefile$/ or /^blib\//
              or /^MakeMaker-\d/ or /^pm_to_blib/ or /^blibdirs/
              or /^_build\// or /^Build$/ or /^pmfiles\.dat/
+             or /^MYMETA\./
              or /~$/ or /\.old$/ or /\#$/ or /^\.#/;
 }
 
