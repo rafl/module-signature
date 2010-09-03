@@ -5,7 +5,7 @@ use 5.005;
 use strict;
 use vars qw($VERSION $SIGNATURE @ISA @EXPORT_OK);
 use vars qw($Preamble $Cipher $Debug $Verbose $Timeout);
-use vars qw($KeyServer $KeyServerPort $AutoKeyRetrieve $CanKeyRetrieve); 
+use vars qw($KeyServer $KeyServerPort $AutoKeyRetrieve $CanKeyRetrieve);
 
 use constant CANNOT_VERIFY       => '0E0';
 use constant SIGNATURE_OK        => 0;
@@ -564,17 +564,12 @@ __END__
 
 Module::Signature - Module signature file manipulation
 
-=head1 VERSION
-
-This document describes version 0.62 of B<Module::Signature>,
-released November 18, 2009.
-
 =head1 SYNOPSIS
 
 As a shell command:
 
     % cpansign              # verify an existing SIGNATURE, or
-                            # make a new one if none exists 
+                            # make a new one if none exists
 
     % cpansign sign         # make signature; overwrites existing one
     % cpansign -s           # same thing
