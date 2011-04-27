@@ -58,7 +58,6 @@ sub _cipher_map {
     for my $line (@lines) {
         my($cipher,$digest,$file) = split " ", $line, 3;
         return unless defined $file;
-        return if exists $map{$file};
         $map{$file} = [$cipher, $digest];
     }
     return \%map;
