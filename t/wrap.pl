@@ -107,6 +107,7 @@ if ($Opt{c}) {
     eval <$fh>;
     close $fh;
     for my $i (0..$#files) {
+        mkpath dirname $paths[$i];
         open my $fh, ">", $paths[$i] or die "Could not open '$paths[$i]': $!";
         binmode $fh;
         local $\;
