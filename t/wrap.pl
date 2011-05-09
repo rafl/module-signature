@@ -42,7 +42,9 @@ Unwrap the test files from the wrapper file
 
 =head1 DESCRIPTION
 
-
+The t/ directory contains tests for different line endings. To
+distribute these tests we wrap them into a Data::Dumper file to avoid
+problems on distribution verification.
 
 =cut
 
