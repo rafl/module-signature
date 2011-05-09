@@ -58,6 +58,7 @@ use File::Basename qw(dirname);
 use File::Path qw(mkpath);
 use File::Spec;
 use Getopt::Long;
+use Pod::Usage;
 
 our %Opt;
 GetOptions(\%Opt,
