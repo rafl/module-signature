@@ -73,15 +73,19 @@ sub _f ($) {File::Spec->catfile(split /\//, shift);}
 
 my @files = qw(t/test-datcrlf-sigcrlf/MANIFEST
 t/test-datcrlf-sigcrlf/README
+t/test-datcrlf-sigcrlf/42.gz
 t/test-datcrlf-sigcrlf/SIGNATURE
 t/test-datcrlf-siglf/MANIFEST
 t/test-datcrlf-siglf/README
+t/test-datcrlf-siglf/42.gz
 t/test-datcrlf-siglf/SIGNATURE
 t/test-datlf-sigcrlf/MANIFEST
 t/test-datlf-sigcrlf/README
+t/test-datlf-sigcrlf/42.gz
 t/test-datlf-sigcrlf/SIGNATURE
 t/test-datlf-siglf/MANIFEST
 t/test-datlf-siglf/README
+t/test-datlf-siglf/42.gz
 t/test-datlf-siglf/SIGNATURE
 );
 my @paths = map { _f($_) } @files;
