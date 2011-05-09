@@ -46,6 +46,9 @@ The t/ directory contains tests for different line endings. To
 distribute these tests we wrap them into a Data::Dumper file to avoid
 problems on distribution verification.
 
+Called with -c we create the wrapping file. Called with -x we unwrap
+the files and install them into place.
+
 =cut
 
 
