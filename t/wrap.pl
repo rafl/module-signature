@@ -49,6 +49,28 @@ problems on distribution verification.
 Called with -c we create the wrapping file. Called with -x we unwrap
 the files and install them into place.
 
+The test t/3-verify.t calls us with -x.
+
+When anything changes that breaks 3-verify.t, then the procedure to
+create new test files is something like the following:
+
+(1) call wrap.pl -x
+
+(2) edit files in t/test*; take care that the files in test-datlf*
+    have Unix line endings and the files in test-datcrlf* have DOS
+    line endings. Apart from that keep the files identical
+
+(3) sign in t/test-datlf-sigold/ with an old version of Module::Signature
+
+(4) copy the signature over to t/test-datcrlf-sigold/
+
+(5) sign in t/test-datlf-signew/ with the upcoming version of
+    Module::Signature
+
+(6) copy the signature over to t/test-datcrlf-signew/
+
+(7) call wrap.pl -c
+
 =cut
 
 
@@ -74,22 +96,22 @@ $Opt{f} ||= "t/wrapped-tests.bin";
 
 sub _f ($) {File::Spec->catfile(split /\//, shift);}
 
-my @files = qw(t/test-datcrlf-sigcrlf/MANIFEST
-t/test-datcrlf-sigcrlf/README
-t/test-datcrlf-sigcrlf/42.gz
-t/test-datcrlf-sigcrlf/SIGNATURE
-t/test-datcrlf-siglf/MANIFEST
-t/test-datcrlf-siglf/README
-t/test-datcrlf-siglf/42.gz
-t/test-datcrlf-siglf/SIGNATURE
-t/test-datlf-sigcrlf/MANIFEST
-t/test-datlf-sigcrlf/README
-t/test-datlf-sigcrlf/42.gz
-t/test-datlf-sigcrlf/SIGNATURE
-t/test-datlf-siglf/MANIFEST
-t/test-datlf-siglf/README
-t/test-datlf-siglf/42.gz
-t/test-datlf-siglf/SIGNATURE
+my @files = qw(t/test-datcrlf-signew/MANIFEST
+t/test-datcrlf-signew/README
+t/test-datcrlf-signew/42.gz
+t/test-datcrlf-signew/SIGNATURE
+t/test-datcrlf-sigold/MANIFEST
+t/test-datcrlf-sigold/README
+t/test-datcrlf-sigold/42.gz
+t/test-datcrlf-sigold/SIGNATURE
+t/test-datlf-signew/MANIFEST
+t/test-datlf-signew/README
+t/test-datlf-signew/42.gz
+t/test-datlf-signew/SIGNATURE
+t/test-datlf-sigold/MANIFEST
+t/test-datlf-sigold/README
+t/test-datlf-sigold/42.gz
+t/test-datlf-sigold/SIGNATURE
 );
 my @paths = map { _f($_) } @files;
 
