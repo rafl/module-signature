@@ -58,4 +58,4 @@
 #!end included /home/src/perl/repoperls/installed-perls/perl/v5.14.0-RC2/1df5/lib/5.14.0/ExtUtils/MANIFEST.SKIP
 
 \.tar\.gz$
-t/test-dat.*/(MANIFEST|README|SIGNATURE)$
+t/test-dat.*/(MANIFEST|README|SIGNATURE|42.gz)$
