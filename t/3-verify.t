@@ -1,11 +1,14 @@
 #!perl
 
 use strict;
+use File::Spec;
 use Test::More;
 use IPC::Run qw(run);
 plan tests => 4;
 
 $|=1;
+sub _f ($) {File::Spec->catfile(split /\//, shift);}
+0 == system $^X, _f"t/wrap.pl", "-x" or die;
 for my $tdir (glob("t/test-dat*")) {
     chdir $tdir or die;
     my @system = ($^X, "-I../../lib/", "../../script/cpansign", "-v");
