@@ -12,3 +12,4 @@ MANIFEST.*
 Debian*
 Module-Signature-*
 *.bs
+t/test-dat*
